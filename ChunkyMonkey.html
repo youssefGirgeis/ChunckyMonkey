@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chunky Monkey - JavaScript Algorithim</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+
+function chunkArrayInGroups(arr, size) {
+  
+  var arrGroup=[];
+  var index = 0;
+  var newSize = 0;
+  var iteration = arr.length/size;
+  //console.log(iteration);
+  for(var i=0; i<iteration; i++){
+  		//console.log(index);
+  		newSize += size;
+  		arrGroup.push(arr.slice(index, newSize));
+  		index += size;
+  		//console.log(newSize);
+  }
+
+  return arrGroup;
+}
+
+console.log(chunkArrayInGroups(['a','b','c','d'], 2));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2));
+
+</script>
+</body>
+</html>
